@@ -6,6 +6,7 @@ Encore
     .cleanupOutputBeforeBuild()
     .addEntry('app', './client/js/index.js')
     .addStyleEntry('main', './client/css/main.css')
+    .enableReactPreset()
 ;
 
 module.exports = Encore.getWebpackConfig();

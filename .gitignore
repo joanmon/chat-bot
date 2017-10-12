@@ -3,4 +3,4 @@ __pycache__
 db.sqlite3
 /public/
 !/public/.gitkeep
-/node_modules
+/node_modules/
