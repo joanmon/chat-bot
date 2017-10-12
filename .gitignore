@@ -4,3 +4,5 @@ db.sqlite3
 /public/
 !/public/.gitkeep
 /node_modules/
+/mongo_db_data/
+!/mongo_db_data/.gitkeep
