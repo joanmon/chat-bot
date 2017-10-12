@@ -1,0 +1,34 @@
+{
+  "name": "vilanet-con-chatbot",
+  "description": "Chatbot demo",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "./node_modules/.bin/encore dev",
+    "dev-watch": "./node_modules/.bin/encore dev --watch",
+    "production": "./node_modules/.bin/encore production"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-runtime": "^6.25.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.12.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "7",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "child_process": "^1.0.2",
+    "eslint": "3.x",
+    "eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-react": "^7.1.0"
+  }
+}
