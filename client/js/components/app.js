@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Messages from './messages'
 import InputText from './inputText'
+import $ from 'jquery'
 
 export default class App extends Component {
 
@@ -25,13 +26,23 @@ export default class App extends Component {
   }
 
   handleSubmit(e) {
+    this.setNewMessage('client', this.state.text)
+    $.post('/get_response', {'message': this.state.text}, this.responseFromServer.bind(this))
+  }
+
+  setNewMessage(from, message) {
+
     const newMessage = {
-      text: '- client: ' + this.state.text,
+      text: '- '+from+': ' + message,
       id: Date.now()
     };
     this.setState((prevState) => ({
       messages: prevState.messages.concat(newMessage),
       text: ''
     }));
+  }
+
+  responseFromServer(response) {
+    this.setNewMessage('server', response)
   }
 }

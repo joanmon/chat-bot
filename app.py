@@ -1,18 +1,21 @@
-from flask import Flask, send_from_directory, render_template
+from flask import Flask, send_from_directory, render_template, request
 from chatbot import bot
 
 app = Flask(__name__, static_url_path='')
 vilaNetBot = bot()
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
-    #response = vilaNetBot.get_response('fine')
-    #return str(response)
     return render_template('index.html')
 
+@app.route('/get_response', methods=['POST'])
+def get_response():
+    response = vilaNetBot.get_response(request.form['message'])
+    return str(response)
+
 @app.route('/public/<path:path>')
-def send_js(path):
+def send_asset(path):
     return send_from_directory('public', path)
 
 if __name__ == "__main__":
